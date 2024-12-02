@@ -1,73 +1,63 @@
 #include <unistd.h>
 
-int	ft_prime(int nb)
+int is_prime(int n)
 {
-	int	i;
+  int i = 2;
 
-	if (nb < 2)
-		return (0);
-	if (nb == 2 || nb == 3)
-		return (1);
-	if (nb % 2 == 0 || nb % 3 == 0)
-		return (0);
-	i = 5;
-	while (i < nb / i)
-	{
-		if ((nb % i == 0) || (nb % (i + 2) == 0))
-			return (0);
-		i += 6;
-	}
-	return (1);
+  if (n < 2)
+    return (0);
+  while (i * i <= n)//√nまで調べれば十分, これ以上大きい数は入らないため
+  {
+    if (n % i == 0)
+      return (0);
+    i++;
+  }
+  return (1);
 }
 
-// int is_prime(int n)
-// {
-//   int i = 2;
-
-//   if (n < 2)
-//       return (0);
-//   while (i * i <= n)
-//   {
-//     if (n % i == 0)
-//       return (0);
-//     i++;
-//   }
-//   return (1);
-// }
-
-int ft_atoi(const char *str)
+int ft_atoi(char *str)
 {
-  int res = 0;
+  int i = 0;
+  int sign = 1;
+  int result = 0;
 
-  while (*str >= '0' && *str <= '9')
-  {
-    res = res * 10 + (*str - '0');
-    str++;
-  }
-  return (res);
+  while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+    i++;
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -sign;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
 
 void ft_putnbr(int n)
 {
-  char c;
+  int c = 0;
 
-  if (n >= 10)
+  if(n > 9)
     ft_putnbr(n / 10);
   c = (n % 10) + '0';
   write(1, &c, 1);
 }
 
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
   int n, sum;
 
-  if (argc != 2)
+  if (ac != 2)
   {
     write(1, "0\n", 2);
     return (0);
   }
 
-  n = ft_atoi(argv[1]);
+  n = ft_atoi(av[1]);
   if (n <= 0)
   {
     write(1, "0\n", 2);

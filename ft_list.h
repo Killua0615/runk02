@@ -1,6 +1,3 @@
-#ifndef FT_LIST_H
-# define FT_LIST_H
-
 typedef struct    s_list
 {
     struct s_list *next;
@@ -8,5 +5,3 @@ typedef struct    s_list
 }                 t_list;
 
 int ft_list_size(t_list *begin_list);
-
-#endif
