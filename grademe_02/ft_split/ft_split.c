@@ -51,25 +51,25 @@ char  **ft_split(char *str)
   return (out);
 }
 
-// int main(void)
-// {
-//   char *s = "   Hello   world\tthis is\nft_split  ";
-//   char **result = ft_split(s);
-//   int i = 0;
+int main(void)
+{
+  char *s = "   Hello   world\tthis is\nft_split  ";
+  char **result = ft_split(s);
+  int i = 0;
 
-//   while(result[i])
-//   {
-//     printf("%s\n", result[i]);
-//     i++;
-//   }
+  while(result[i])
+  {
+    printf("%s\n", result[i]);
+    i++;
+  }
 
-//   i = 0;
-//   while (result[i])
-//   {
-//       free(result[i]); // 各単語のメモリを解放
-//       i++;
-//   }
-//   free(result); // 配列全体のメモリを解放
+  i = 0;
+  while (result[i])
+  {
+      free(result[i]); // 各単語のメモリを解放
+      i++;
+  }
+  free(result); // 配列全体のメモリを解放
 
-//   return (0);
-// }
+  return (0);
+}
