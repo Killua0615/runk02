@@ -26,7 +26,7 @@ char *ft_strdup(const char *s1)
   }
   s2[i] = '\0';
   return(s2);
-}
+}//指定された文字列を複製して新しいメモリ領域にコピーする関数
 
 int main (void)
 {

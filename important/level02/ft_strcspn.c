@@ -19,7 +19,7 @@ size_t ft_strcspn(const char *s, const char *charset)
     i++;
   }
   return (i);
-}
+}//s の中で最初に reject に含まれる文字が現れる位置
 
 int main (void)
 {
