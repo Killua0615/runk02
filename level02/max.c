@@ -1,7 +1,7 @@
 int max(int *tab, unsigned int len)
 {
   int largest;
-  unsigned int i = 1;
+  unsigned int i = 0;
 
   if (len == 0)
     return 0;
@@ -18,13 +18,13 @@ int max(int *tab, unsigned int len)
 #include <stdio.h>
 int main(void)
 {
-    int arr1[] = {1, 2, 3, 4, 5};
-    int arr2[] = {-10, -20, -30, -5};
-    int arr3[] = {};
+  int arr1[] = {1, 2, 3, 4, 5};
+  int arr2[] = {-10, -20, -30, -5};
+  int arr3[] = {};
 
-    printf("Max of arr1: %d\n", max(arr1, 5)); // 5
-    printf("Max of arr2: %d\n", max(arr2, 4)); // -5
-    printf("Max of arr3: %d\n", max(arr3, 0)); // 0
+  printf("Max of arr1: %d\n", max(arr1, 5)); // 5
+  printf("Max of arr2: %d\n", max(arr2, 4)); // -5
+  printf("Max of arr3: %d\n", max(arr3, 0)); // 0
 
-    return 0;
+  return 0;
 }

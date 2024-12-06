@@ -20,6 +20,5 @@ int main(void)
 
     for (int i = 0; i < size; i++)
         printf("(%u) = %d\n", test_values[i], is_power_of_2(test_values[i]));
-
     return 0;
 }

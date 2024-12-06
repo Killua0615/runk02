@@ -2,6 +2,7 @@ unsigned char	swap_bits(unsigned char octet)
 {
 	return ((octet >> 4) | (octet << 4));
 }
+//1バイト（8ビット）の値を受け取り、その上位4ビットと下位4ビットを入れ替える処理を行う関数
 
 int	main(void)
 {
