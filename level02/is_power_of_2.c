@@ -4,7 +4,7 @@ int is_power_of_2(unsigned int n)
 {
     unsigned int value = 1;
 
-    while (value <= n)
+    while (value <= n)//<=としないとnが1の時、1 は 2^0は2のべき乗なのに0が返ってしまう
     {
         if (value == n)
             return 1;
@@ -15,10 +15,14 @@ int is_power_of_2(unsigned int n)
 
 int main(void)
 {
-    unsigned int test_values[] = {0, 1, 2, 3, 4, 8, 16, 31, 32, 64, 127, 128};
-    int size = sizeof(test_values) / sizeof(test_values[0]);
+    unsigned int x[] = {0, 1, 2, 3, 4, 8, 16, 31, 32, 64, 127, 128};
+    int size = sizeof(x) / sizeof(x[0]);// 要素数を計算する方法
+    int i = 0;
 
-    for (int i = 0; i < size; i++)
-        printf("(%u) = %d\n", test_values[i], is_power_of_2(test_values[i]));
-    return 0;
+    while (i < size)
+    {
+        printf("(%u) = %d\n", x[i], is_power_of_2(x[i]));
+        i++;
+    }
 }
+ 

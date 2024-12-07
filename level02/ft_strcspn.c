@@ -20,6 +20,7 @@ size_t ft_strcspn(const char *s, const char *charset)
   }
   return (i);
 }
+//reject に含まれるいずれかの文字が最初に現れる位置までの長さ（インデックス）を返す
 
 int main (void)
 {

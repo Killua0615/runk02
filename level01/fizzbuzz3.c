@@ -1,20 +1,18 @@
 #include <unistd.h>
 
-void ft_print(int n)
+void ft_putnbr(int n)
 {
-  char c;
+  int c = 0;
 
   if(n > 9)
-    ft_print(n /10);
+    ft_putnbr(n / 10);
   c = (n % 10) + '0';
   write(1, &c, 1);
 }
 
-int main(void)
+int main (void)
 {
-  int i;
-
-  i = 1;
+  int i = 0;
 
   while(i < 101)
   {
@@ -25,7 +23,7 @@ int main(void)
     else if(i % 3 == 0)
       write(1, "fizz", 4);
     else
-      ft_print(i);
+      ft_putnbr(i);
     write(1, "\n", 1);
     i++;
   }

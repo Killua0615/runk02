@@ -10,7 +10,7 @@ void	print_bits(unsigned char octet)
 			write(1, "1", 1);
 		else
 			write(1, "0", 1);
-		mask >>= 1; // マスクを右シフトして次のビットを確認
+		mask >>= 1; // 右に移動。10000000（128）、次は 01000000（64）
 	}
 }
 

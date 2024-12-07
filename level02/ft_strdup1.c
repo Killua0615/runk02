@@ -22,7 +22,7 @@ char    *ft_strdup(char *src)
 
 int main(void)
 {
-  char x[100] = "dfghjkl";
+  char x[100] = "vsdgb";
   char *y = ft_strdup(x);
   int i = 0;
 
