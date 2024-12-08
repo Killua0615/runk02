@@ -10,7 +10,7 @@ int ft_atoi_base(const char *str, int str_base)
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 
-	if (str[i] == '-' || str[i] == '+')
+	if(str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign = -1;
@@ -39,6 +39,7 @@ int ft_atoi_base(const char *str, int str_base)
 
 	return (result * sign);
 }
+//指定された基数（str_base）に基づいて文字列（str）を整数（10進数）に変換する関数
 
 #include <stdio.h>
 
