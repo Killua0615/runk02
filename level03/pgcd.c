@@ -8,7 +8,7 @@ int main(int ac, char const **av)
 
 	if (ac == 3)
 	{
-		if (nbr1 > 0 && nbr2 > 0)
+		if(nbr1 > 0 && nbr2 > 0)
 		{
 			while (nbr1 != nbr2)
 			{

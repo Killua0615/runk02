@@ -1,25 +1,24 @@
+#include <unistd.h>
 #include <stdlib.h>
 
-int     *ft_range(int start, int end)
+int *ft_range(int start, int end)
 {
   int i = 0;
-  int len = end - start; //絶対値を求める。数値の大きさ、符号を無視したもの
-  int *res;
-
-  if (len < 0)
+  int len = (start - end);
+  if(len < 0)
     len *= -1;
   len++;
 
-  res = (int *)malloc(sizeof(int) * len);
+  int *res = (int *)malloc(sizeof(int) * len);
   if(!res)
-    return (NULL);
+    return(NULL);
 
-  while (i < len)
+  while(len > i)
   {
     res[i] = start;
     if(start < end)
       start++;
-    else                            //減っていく時の処理
+    else
       start--;
     i++;
   }

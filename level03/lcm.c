@@ -12,17 +12,15 @@ unsigned int lcm(unsigned int a, unsigned int b)
 	{
 		if (n % a == 0 && n % b == 0)
 			return (n);
-		++n;
+		n++;
 	}
 }
 
 #include <stdio.h>
 int main(void)
 {
-  unsigned int a, b;
-
-  a = 5;
-  b = 10;
+  unsigned int a = 5;
+	unsigned int b = 10;
   printf("%u\n", lcm(a, b));
   return (0);
 }
