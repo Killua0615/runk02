@@ -24,8 +24,8 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 
 int main(void)
 {
-  char x[100] = "fgbujhnlk";
-  char y[100] = "fgbaaaaa";
+  char x[100] = "fsdcsghjkfhdbaaa";//まずfがyの中にないか探す。その後sがないか探しあったので、その先頭ポインタを返す
+  char y[100] = "ghjklagbsaa";
   
 
   char *z = strpbrk(x, y);
