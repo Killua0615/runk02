@@ -4,7 +4,7 @@ void print_hex(int n)
 {
   if(n >= 16)
     print_hex(n / 16);
-  write(1, &("0123456789abcdef"[n % 16]), 1);
+  write(1, &"0123456789abcdef"[n % 16], 1);
 }
 
 int ft_atoi(const char *str)
@@ -29,14 +29,13 @@ int ft_atoi(const char *str)
   return (result * sign);
 }
 
-#include <stdio.h>
 int main (int ac, char **av)
 {
+  int i = 0;
   if(ac == 2)
   {
-    int nbr = ft_atoi(av[1]);
-    print_hex(nbr);
+    i = ft_atoi(av[1]);
+    print_hex(i);
   }
   write(1, "\n", 1);
-  return (0);
 }

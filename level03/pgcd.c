@@ -10,7 +10,7 @@ int main(int ac, char const **av)
 	{
 		if(nbr1 > 0 && nbr2 > 0)
 		{
-			while (nbr1 != nbr2)
+			while (nbr1 != nbr2)//nbr1 と nbr2 が等しくなるまで計算を続ける
 			{
 				if (nbr1 > nbr2)
 					nbr1 -= nbr2;

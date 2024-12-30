@@ -1,12 +1,5 @@
 #include <unistd.h>
 
-void print_hex(int n)
-{
-  if(n >= 16)
-    print_hex(n / 16);
-  write(1, &("0123456789abcdef"[n % 16]), 1);
-}
-
 int ft_atoi(const char *str)
 {
   int i = 0;
@@ -29,14 +22,40 @@ int ft_atoi(const char *str)
   return (result * sign);
 }
 
-#include <stdio.h>
+void ft_putnbr(int n)
+{
+  char c;
+
+  if(n > 9)
+    ft_putnbr(n / 10);
+  c = n % 10 + '0';
+  write(1, &c, 1);
+}
+
 int main (int ac, char **av)
 {
+  int i = 1;
+  int c = 1;
+
+  if(ac == 1)
+  {
+    write(1, "\n", 1);
+    return (0);
+  }
+
   if(ac == 2)
   {
-    int nbr = ft_atoi(av[1]);
-    print_hex(nbr);
+    int n = ft_atoi(av[1]);
+    while(i < 10)
+    {
+      ft_putnbr(c);
+      write(1, " x ", 3);
+      ft_putnbr(n);
+      write(1, " = ", 3);
+      ft_putnbr(c * n);
+      write(1, "\n", 1);
+      c++;
+      i++;
+    }
   }
-  write(1, "\n", 1);
-  return (0);
 }
