@@ -1,8 +1,6 @@
 #include <unistd.h>
-#include <string.h>
-#include <stdio.h>
 
-size_t	ft_strcspn(const char *s, const char *reject)
+size_t ft_strcspn(const char *s, const char *charset)
 {
   int i = 0;
   int j = 0;
@@ -10,17 +8,18 @@ size_t	ft_strcspn(const char *s, const char *reject)
   while(s[i])
   {
     j = 0;
-    while(reject[j])
+    while(charset[j])
     {
-      if(s[i] == reject[j])
+      if(s[i] == charset[j])
         return (i);
       j++;
     }
     i++;
   }
-  return (i); 
+  return (i);
 }
 
+#include <string.h>
 #include <stdio.h>
 int main(void)
 {
