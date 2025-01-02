@@ -4,11 +4,11 @@ unsigned int lcm(unsigned int a, unsigned int b)
 
 	if (a == 0 || b == 0)
 		return (0);
-	if (a > b)
+	if (a > b)//大きいほうをnに代入
 		n = a;
 	else
 		n = b;
-	while (1)
+	while (1)//returnされるまで続く
 	{
 		if (n % a == 0 && n % b == 0)
 			return (n);
@@ -19,7 +19,7 @@ unsigned int lcm(unsigned int a, unsigned int b)
 #include <stdio.h>
 int main(void)
 {
-  unsigned int a = 5;
+  unsigned int a = 6;
 	unsigned int b = 10;
   printf("%u\n", lcm(a, b));
   return (0);

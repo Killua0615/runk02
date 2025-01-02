@@ -34,8 +34,8 @@ char    **ft_split(char *str)
   char **out = (char **)malloc(sizeof(char *) * wc + 1);
   if(!out)
     return(NULL);
-  i = 0;
 
+  i = 0;
   while(str[i])
   {
     while(str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
